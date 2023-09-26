@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="praktikum-7">
+  <ClassDiagramComponents>
+    <Class name="Bank" package="latihan1" visibility="public" xPosition="140.0" yPosition="132.0">
+      <Fields>
+        <Field name="jumlahNasabah" type="int" visibility="private"/>
+        <Field name="nasabah" type="ArrayList&lt;Nasabah&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="tambahNasabah" returnType="void" visibility="public">
+          <Argument type="String" name="namaAwal"/>
+          <Argument type="String" name="namaAkhir"/>
+          <Argument type="int" name="saldo"/>
+        </Method>
+        <Method name="removeNasabah" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="updateNasabah" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+          <Argument type="Nasabah" name="nasabah"/>
+          <Argument type="int" name="saldo"/>
+        </Method>
+        <Method name="isNasabahExist" returnType="boolean" visibility="public">
+          <Argument type="String" name="namaAwal"/>
+          <Argument type="String" name="namaAkhir"/>
+        </Method>
+        <Method name="getJumlahNasabah" returnType="int" visibility="public"/>
+        <Method name="getNasabah" returnType="Nasabah" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getIndexNasabah" returnType="int" visibility="public">
+          <Argument type="String" name="namaAwal"/>
+          <Argument type="String" name="namaAkhir"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Nasabah" package="latihan1" visibility="public" xPosition="140.0" yPosition="621.0">
+      <Fields>
+        <Field name="namaAwal" type="String" visibility="private"/>
+        <Field name="namaAkhir" type="String" visibility="private"/>
+        <Field name="tabungan" type="Tabungan" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="namaAwal"/>
+          <Argument type="String" name="namaAkhir"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNamaAwal" returnType="String" visibility="public"/>
+        <Method name="getNamaAkhir" returnType="String" visibility="public"/>
+        <Method name="getTabungan" returnType="Tabungan" visibility="public"/>
+        <Method name="setTabungan" returnType="void" visibility="public">
+          <Argument type="Tabungan" name="tabungan"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Praktikum7" package="latihan1" visibility="public" xPosition="523.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tabungan" package="latihan1" visibility="public" xPosition="140.0" yPosition="1130.0">
+      <Fields>
+        <Field name="saldo" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="saldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSaldo" returnType="int" visibility="public"/>
+        <Method name="simpanUang" returnType="void" visibility="public">
+          <Argument type="int" name="simpan"/>
+        </Method>
+        <Method name="ambilUang" returnType="boolean" visibility="public">
+          <Argument type="int" name="tarik"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BankApps" package="view" visibility="public" xPosition="705.0" yPosition="390.0">
+      <Fields>
+        <Field name="app" type="JFrame" visibility="private"/>
+        <Field name="bank" type="Bank" visibility="public"/>
+        <Field name="currentUser" type="int" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="changeView" returnType="void" visibility="private">
+          <Argument type="JPanel" name="view"/>
+        </Method>
+        <Method name="getLoginView" returnType="void" visibility="public"/>
+        <Method name="getAdminView" returnType="void" visibility="public"/>
+        <Method name="getUserView" returnType="void" visibility="public"/>
+        <Method name="getWithdrawView" returnType="void" visibility="public"/>
+        <Method name="getDepositView" returnType="void" visibility="public"/>
+        <Method name="getBank" returnType="Bank" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AdminHomeView" package="view.components" visibility="public" xPosition="1414.0" yPosition="425.0">
+      <Fields>
+        <Field name="app" type="BankApps" visibility="private"/>
+        <Field name="tableContent" type="DefaultTableModel" visibility="private"/>
+        <Field name="btnAdd" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCancel" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDelete" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnKeluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnLogout" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="namaAkhir" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="namaAwal" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="saldo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="table" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="BankApps" name="app"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="renderTable" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnCancelActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnAddActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnDeleteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnAddMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnDeleteMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="namaAwalActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tableMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnCancelMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnLogoutMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginView" package="view.components" visibility="public" xPosition="1461.0" yPosition="3.0">
+      <Fields>
+        <Field name="app" type="BankApps" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="labelNamaAwall" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="textNamaAkhir" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtNamaAkhir" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNamaAwal" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="BankApps" name="app"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtNamaAkhirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserDepositView" package="view.components" visibility="public" xPosition="756.0" yPosition="20.0">
+      <Fields>
+        <Field name="app" type="BankApps" visibility="package"/>
+        <Field name="btnDeposit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtDeposit" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="BankApps" name="app"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnDepositActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserHomeView" package="view.components" visibility="public" xPosition="445.0" yPosition="905.0">
+      <Fields>
+        <Field name="app" type="BankApps" visibility="package"/>
+        <Field name="btnDeposit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnTransfer" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnWithdraw" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtFullName" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtSaldo" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="BankApps" name="app"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnDepositActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnWithdrawActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserWithdrawView" package="view.components" visibility="public" xPosition="1169.0" yPosition="1152.0">
+      <Fields>
+        <Field name="app" type="BankApps" visibility="package"/>
+        <Field name="btnWithdraw" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtWithdraw" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="BankApps" name="app"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnWithdrawActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="app" source="view.components.UserWithdrawView" target="view.BankApps" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="nasabah" source="latihan1.Bank" target="latihan1.Nasabah" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Nasabah&gt;"/>
+    <HasRelation name="app" source="view.components.AdminHomeView" target="view.BankApps" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="latihan1.Nasabah" target="latihan1.Tabungan" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="view.BankApps" target="latihan1.Bank" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tabungan" source="latihan1.Nasabah" target="latihan1.Tabungan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="app" source="view.components.UserDepositView" target="view.BankApps" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="app" source="view.components.LoginView" target="view.BankApps" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="latihan1.Bank" target="latihan1.Nasabah" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bank" source="view.BankApps" target="latihan1.Bank" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="app" source="view.components.UserHomeView" target="view.BankApps" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
